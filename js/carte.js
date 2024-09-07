@@ -1,3 +1,4 @@
+// Centrer la carte sur le Burkina.
 var map = L.map("map").fitBounds([
   [15.083, -5.478], // Nord-Ouest du Burkina Faso
   [9.391, 2.406], // Sud-Est du Burkina Faso
@@ -9,6 +10,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map); //Affiche la carte
 
+// Ce layer est mis pour permettre de mieux voir les contours du pays et de ses régions dans la carte.
 const regionbfLayer = L.geoJSON(regionbf, {
   style(feature) {
     return {
@@ -20,26 +22,41 @@ const regionbfLayer = L.geoJSON(regionbf, {
   },
 }).addTo(map);
 
-/* // Ajout des hôpitaux avec les marqueurs.
-var hopitaux = [
-  {
-    name: "Centre Hospitalier Universitaire Yalgado",
-    coords: [12.380529, -1.524788],
-  },
-  { name: "Hôpital de District de Bogodogo", coords: [12.326179, -1.498797] },
-  {
-    name: "Hôpital Pédiatrique Charles de Gaulle",
-    coords: [12.374176, -1.533103],
-  },
-  { name: "Centre Médical Saint Camille", coords: [12.35898, -1.523635] },
-  { name: "Hôpital National Blaise Compaoré", coords: [12.343456, -1.495722] },
-];
-
-// Ajoute des marqueurs pour chaque hôpital
-hopitaux.forEach(function (hopital) {
-  L.marker(hopital.coords)
-    .addTo(map)
-    .bindPopup("<b>" + hopital.name + "</b>")
-    .openPopup();
+var chuIcon = L.icon({
+  iconUrl: "lib/images/chu.png", // Chemin vers ton icône
+  iconSize: [32, 32], // Taille de l'icône
+  iconAnchor: [16, 32], // Point d'ancrage de l'icône (centre bas)
+  popupAnchor: [0, -32], // Point d'ancrage pour le popup (au-dessus de l'icône)
 });
- */
+
+// Fonction pour ajouter des points à partir du GeoJSON
+L.geoJSON(chu, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, { icon: chuIcon });
+  },
+  onEachFeature: function (feature, layer) {
+    // Contenu du popup avec les informations de l'hôpital
+    var popupContent =
+      "<b>" +
+      feature.properties.nom +
+      "</b><br>" +
+      "Localité: " +
+      feature.properties.localité +
+      "<br>" +
+      "Rubrique: " +
+      feature.properties.rubrique +
+      "<br>" +
+      "Catégorie: " +
+      feature.properties.catégorie +
+      "<br>" +
+      "Téléphone: " +
+      feature.properties.téléphone +
+      "<br>" +
+      "Email: " +
+      feature.properties.email +
+      "<br>" +
+      "Adresse: " +
+      feature.properties.adresse;
+    layer.bindPopup(popupContent);
+  },
+}).addTo(map);
