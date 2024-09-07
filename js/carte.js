@@ -22,77 +22,54 @@ const regionbfLayer = L.geoJSON(regionbf, {
   },
 }).addTo(map);
 
-// Définitions des icones des différents objets :
-//CHU
-let chuIcon = L.icon({
-  iconUrl: "lib/images/chu.png", // Chemin vers ton icône
-  iconSize: [32, 32], // Taille de l'icône
-  iconAnchor: [16, 32], // Point d'ancrage de l'icône (centre bas)
-  popupAnchor: [0, -32], // Point d'ancrage pour le popup (au-dessus de l'icône)
-});
-//CHR
-let chrIcon = L.icon({
-  iconUrl: "lib/images/chr.png",
-  iconSize: [32, 32],
-  iconAnchor: [16, 32],
-  popupAnchor: [0, -32],
-});
+// Fonction pour créer les icones personnalisées
+function createCustomIcon(
+  iconUrl,
+  iconSize = [32, 32],
+  iconAnchor = [16, 32],
+  popupAnchor = [0, -32]
+) {
+  return L.icon({
+    iconUrl: iconUrl, // Chemin vers l'image de l'icône
+    iconSize: iconSize, // Taille de l'icône [width, height]
+    iconAnchor: iconAnchor, // Point d'ancrage [x, y]
+    popupAnchor: popupAnchor, // Ancrage du popup [x, y]
+  });
+}
+// Création des icônes personnalisées
+let chrIcon = createCustomIcon("lib/images/chr.png");
+let chuIcon = createCustomIcon("lib/images/chu.png");
 
-// Fonction pour ajouter les CHU à partir du GeoJSON
+// Fonction pour créer un GeoJSON Layer en fonction du type et de l'icône
+function createLayer(data, icon) {
+  return L.geoJSON(data, {
+    pointToLayer: function (feature, latlng) {
+      return L.marker(latlng, { icon: icon });
+    },
+    onEachFeature: function (feature, layer) {
+      var popupContent =
+        "<b>" +
+        feature.properties.nom +
+        "</b><br>" +
+        "Localité: " +
+        feature.properties.localité +
+        "<br>" +
+        "Catégorie: " +
+        feature.properties.catégorie +
+        "<br>" +
+        "Téléphone: " +
+        feature.properties.téléphone +
+        "<br>" +
+        "Adresse: " +
+        feature.properties.adresse;
+      layer.bindPopup(popupContent);
+    },
+  });
+}
 
-let chuLayer = L.geoJSON(chu, {
-  pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: chuIcon });
-  },
-  onEachFeature: function (feature, layer) {
-    // Contenu du popup avec les informations de l'hôpital
-    let popupContent =
-      "<b>" +
-      feature.properties.nom +
-      "</b><br>" +
-      "Localité: " +
-      feature.properties.localité +
-      "<br>" +
-      "Catégorie: " +
-      feature.properties.catégorie +
-      "<br>" +
-      "Téléphone: " +
-      feature.properties.téléphone +
-      "<br>" +
-      "Email: " +
-      feature.properties.email +
-      "<br>" +
-      "Adresse: " +
-      feature.properties.adresse;
-    layer.bindPopup(popupContent);
-  },
-});
-
-// Ajouter les CHR à partir des données GeoJSON
-let chrLayer = L.geoJSON(chr, {
-  pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: chrIcon });
-  },
-  onEachFeature: function (feature, layer) {
-    // Contenu du popup avec les informations de l'hôpital
-    let popupContent =
-      "<b>" +
-      feature.properties.nom +
-      "</b><br>" +
-      "Localité: " +
-      feature.properties.localité +
-      "<br>" +
-      "Catégorie: " +
-      feature.properties.catégorie +
-      "<br>" +
-      "Téléphone: " +
-      feature.properties.téléphone +
-      "<br>" +
-      "Adresse: " +
-      feature.properties.adresse;
-    layer.bindPopup(popupContent);
-  },
-});
+// Couches pour les CHR et CHU
+let chrLayer = createLayer(chr, chrIcon);
+let chuLayer = createLayer(chu, chuIcon);
 
 // Ajout des couches de filtrage
 let overlayMaps = {
@@ -106,6 +83,17 @@ L.control.layers(null, overlayMaps).addTo(map);
 // Afficher les deux couches par défaut
 chrLayer.addTo(map);
 chuLayer.addTo(map);
+
+// Ajout de la recherche sur la carte
+let searchControl = new L.Control.Search({
+  layer: L.layerGroup([chrLayer, chuLayer]), // Ajoute toutes les couches que tu veux rendre recherchables
+  propertyName: "nom", // Recherche par le nom des hôpitaux
+  marker: false,
+  moveToLocation: function (latlng, title, map) {
+    // Centrer la carte sur l'élément recherché
+    map.setView(latlng, 15); // Zoom sur l'élément recherché
+  },
+}).addTo(map);
 
 // Ajout d'une légende personnalisée
 let legend = L.control({ position: "bottomleft" });
