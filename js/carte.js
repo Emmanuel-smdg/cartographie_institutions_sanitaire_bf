@@ -36,7 +36,7 @@ function createCustomIcon(
     popupAnchor: popupAnchor, // Ancrage du popup [x, y]
   });
 }
-// Création des icônes personnalisées
+// Création des icônes personnalisées pour les CHR et CHU
 let chrIcon = createCustomIcon("lib/images/chr.png");
 let chuIcon = createCustomIcon("lib/images/chu.png");
 
@@ -89,6 +89,7 @@ let searchControl = new L.Control.Search({
   layer: L.layerGroup([chrLayer, chuLayer]), // Ajoute toutes les couches que tu veux rendre recherchables
   propertyName: "nom", // Recherche par le nom des hôpitaux
   marker: false,
+  initial: false,
   moveToLocation: function (latlng, title, map) {
     // Centrer la carte sur l'élément recherché
     map.setView(latlng, 15); // Zoom sur l'élément recherché
