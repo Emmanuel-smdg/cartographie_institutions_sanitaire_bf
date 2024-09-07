@@ -106,3 +106,31 @@ L.control.layers(null, overlayMaps).addTo(map);
 // Afficher les deux couches par défaut
 chrLayer.addTo(map);
 chuLayer.addTo(map);
+
+// Ajout d'une légende personnalisée
+let legend = L.control({ position: "bottomleft" });
+
+legend.onAdd = function (map) {
+  let div = L.DomUtil.create("div", "info legend"),
+    labels = ["<strong>Types d'Hôpitaux</strong>"],
+    categories = ["CHU", "CHR"];
+
+  let icons = {
+    CHU: "lib/images/chu.png",
+    CHR: "lib/images/chr.png",
+  };
+
+  categories.forEach(function (category) {
+    div.innerHTML += labels.push(
+      '<img src="' +
+        icons[category] +
+        '" style="width:24px;height:24px;"> ' +
+        category
+    );
+  });
+
+  div.innerHTML = labels.join("<br>");
+  return div;
+};
+
+legend.addTo(map);
