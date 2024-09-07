@@ -10,7 +10,6 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire Régional de Ouahigouya",
         localité: "Ouahigouya",
-        rubrique: "Formations sanitaires",
         catégorie: "Hôpital publique",
         téléphone: "(226) 57 69 68 77",
         email: "chur.ohg@gmail.com",
@@ -26,7 +25,6 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire de Tingandogo",
         localité: "Ouagadougou",
-        rubrique: "Formations sanitaires",
         catégorie: "Hôpital publique",
         téléphone: "(226) 25 49 09 00",
         facebook: "https://www.facebook.com/hnbc.org.bf?locale=fr_FR",
@@ -42,7 +40,6 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire Yalgado Ouédraogo",
         localité: "Ouagadougou",
-        rubrique: "Formations sanitaires",
         catégorie: "Hôpital publique",
         téléphone:
           "(226) 25 30 66 43 / 25 31 16 55 / 25 31 16 56 / 25 31 16 57",
@@ -61,7 +58,6 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire de BOGODOGO",
         localité: "Ouagadougou",
-        rubrique: "Formations sanitaires",
         catégorie: "Hôpital publique",
         téléphone: "25 37 10 16 / 25 37 10 17",
         email: "infos@chubogodogo.gov.bf",
@@ -79,7 +75,6 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire Pédiatrique – Charles de Gaulle",
         localité: "Ouagadougou",
-        rubrique: "Formations sanitaires",
         catégorie: "Hôpital publique",
         téléphone: "(226) 76 76 76 76",
         site_web: "http://www.hopitalpediatrique.bf/",
@@ -96,7 +91,6 @@ var chu = {
       properties: {
         nom: "Centre Hôspitalier Universitaire Sourou Sanou",
         localité: "Bobo-Dioulasso",
-        rubrique: "Formations sanitaires",
         catégorie: "Hôpital publique",
         téléphone: "(226) 20 97 00 44 / 20 97 00 45 / 20 97 00 47",
         adresse: "Sikasso Sira, Bobo-Dioulasso, Burkina Faso",

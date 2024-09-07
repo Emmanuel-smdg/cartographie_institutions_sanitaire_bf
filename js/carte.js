@@ -1,5 +1,5 @@
 // Centrer la carte sur le Burkina.
-var map = L.map("map").fitBounds([
+let map = L.map("map").fitBounds([
   [15.083, -5.478], // Nord-Ouest du Burkina Faso
   [9.391, 2.406], // Sud-Est du Burkina Faso
 ]);
@@ -22,29 +22,36 @@ const regionbfLayer = L.geoJSON(regionbf, {
   },
 }).addTo(map);
 
-var chuIcon = L.icon({
+// Définitions des icones des différents objets :
+//CHU
+let chuIcon = L.icon({
   iconUrl: "lib/images/chu.png", // Chemin vers ton icône
   iconSize: [32, 32], // Taille de l'icône
   iconAnchor: [16, 32], // Point d'ancrage de l'icône (centre bas)
   popupAnchor: [0, -32], // Point d'ancrage pour le popup (au-dessus de l'icône)
 });
+//CHR
+let chrIcon = L.icon({
+  iconUrl: "lib/images/chr.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32],
+});
 
-// Fonction pour ajouter des points à partir du GeoJSON
-L.geoJSON(chu, {
+// Fonction pour ajouter les CHU à partir du GeoJSON
+
+let chuLayer = L.geoJSON(chu, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, { icon: chuIcon });
   },
   onEachFeature: function (feature, layer) {
     // Contenu du popup avec les informations de l'hôpital
-    var popupContent =
+    let popupContent =
       "<b>" +
       feature.properties.nom +
       "</b><br>" +
       "Localité: " +
       feature.properties.localité +
-      "<br>" +
-      "Rubrique: " +
-      feature.properties.rubrique +
       "<br>" +
       "Catégorie: " +
       feature.properties.catégorie +
@@ -59,4 +66,43 @@ L.geoJSON(chu, {
       feature.properties.adresse;
     layer.bindPopup(popupContent);
   },
-}).addTo(map);
+});
+
+// Ajouter les CHR à partir des données GeoJSON
+let chrLayer = L.geoJSON(chr, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, { icon: chrIcon });
+  },
+  onEachFeature: function (feature, layer) {
+    // Contenu du popup avec les informations de l'hôpital
+    let popupContent =
+      "<b>" +
+      feature.properties.nom +
+      "</b><br>" +
+      "Localité: " +
+      feature.properties.localité +
+      "<br>" +
+      "Catégorie: " +
+      feature.properties.catégorie +
+      "<br>" +
+      "Téléphone: " +
+      feature.properties.téléphone +
+      "<br>" +
+      "Adresse: " +
+      feature.properties.adresse;
+    layer.bindPopup(popupContent);
+  },
+});
+
+// Ajout des couches de filtrage
+let overlayMaps = {
+  "CHU (Centres Hospitaliers Universitaires)": chuLayer,
+  "CHR (Centres Hospitaliers Régionaux)": chrLayer,
+};
+
+// Ajout du contrôle de couches
+L.control.layers(null, overlayMaps).addTo(map);
+
+// Afficher les deux couches par défaut
+chrLayer.addTo(map);
+chuLayer.addTo(map);
