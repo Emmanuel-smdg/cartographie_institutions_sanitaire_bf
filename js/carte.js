@@ -41,6 +41,8 @@ let chrIcon = createCustomIcon("lib/images/chr.png");
 let chuIcon = createCustomIcon("lib/images/chu.png");
 let labIcon = createCustomIcon("lib/images/laboratoire.png");
 let depotIcon = createCustomIcon("lib/images/trousse.png");
+let hopitalIcon = createCustomIcon("lib/images/hopital.png");
+let clininqueIcon = createCustomIcon("lib/images/clinique.png");
 
 // Fonction pour créer un GeoJSON Layer en fonction du type et de l'icône
 function createLayer(data, icon) {
@@ -74,13 +76,17 @@ let chrLayer = createLayer(chr, chrIcon);
 let chuLayer = createLayer(chu, chuIcon);
 let labLayer = createLayer(lab, labIcon);
 let depotLayer = createLayer(depot, depotIcon);
+let hopitalLayer = createLayer(hopital, hopitalIcon);
+let cliniqueLayer = createLayer(clinique, clininqueIcon);
 
 // Ajout des couches de filtrage
 let overlayMaps = {
   "CHU (Centres Hospitaliers Universitaires)": chuLayer,
   "CHR (Centres Hospitaliers Régionaux)": chrLayer,
-  "LAB (Laboratoire d'analyses médicales)": labLayer,
-  "DEPOT (Dépôt pharmaceutique)": depotLayer,
+  "Laboratoires d'analyses médicales": labLayer,
+  "Dépôts pharmaceutique": depotLayer,
+  Hopitaux: hopitalLayer,
+  Clinique: cliniqueLayer,
 };
 
 // Ajout du contrôle de couches
@@ -91,10 +97,19 @@ chrLayer.addTo(map);
 chuLayer.addTo(map);
 labLayer.addTo(map);
 depotLayer.addTo(map);
+hopitalLayer.addTo(map);
+cliniqueLayer.addTo(map);
 
 // Ajout de la recherche sur la carte
 let searchControl = new L.Control.Search({
-  layer: L.layerGroup([chrLayer, chuLayer, labLayer, depotLayer]),
+  layer: L.layerGroup([
+    chrLayer,
+    chuLayer,
+    labLayer,
+    depotLayer,
+    hopitalLayer,
+    cliniqueLayer,
+  ]),
   propertyName: "nom", // Recherche par le nom des hôpitaux
   marker: false,
   initial: false,
@@ -110,13 +125,15 @@ let legend = L.control({ position: "bottomleft" });
 legend.onAdd = function (map) {
   let div = L.DomUtil.create("div", "info legend"),
     labels = ["<strong>Types d'Hôpitaux</strong>"],
-    categories = ["CHU", "CHR", "LABO", "DEPOT"];
+    categories = ["CHU", "CHR", "LABO", "DEPOT", "HOPITAL", "CLINIQUE"];
 
   let icons = {
     CHU: "lib/images/chu.png",
     CHR: "lib/images/chr.png",
     LABO: "lib/images/laboratoire.png",
     DEPOT: "lib/images/trousse.png",
+    HOPITAL: "lib/images/hopital.png",
+    CLINIQUE: "lib/images/clinique.png",
   };
 
   categories.forEach(function (category) {
