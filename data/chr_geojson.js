@@ -10,7 +10,7 @@ var chr = {
       properties: {
         nom: "Centre Hôspitalier Régional de Banfora",
         localité: "Banfora",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Régional",
         téléphone: "(226) 20 91 00 11 / 20 91 00 55 / 20 91 02 15",
         adresse: "J6QR+XGJ Régional Hospital, Banfora, Burkina Faso",
       },
@@ -24,7 +24,7 @@ var chr = {
       properties: {
         nom: "Centre Hôspitalier Régional de Dori",
         localité: "Dori",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Régional",
         téléphone: "(226) 24 46 02 77 / 24 46 03 65",
         fax: "(226) 24 46 03 63",
         adresse: "2XM8+X5W, Dori, Burkina Faso",
@@ -39,7 +39,7 @@ var chr = {
       properties: {
         nom: "Centre Hospitalier Régional de Fada N'Gourma",
         localité: "Fada N'Gourma",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Régional",
         téléphone: "(226) 60 25 54 03",
         adresse: "Unnamed Road, Fada-Ngourma, Burkina Faso",
       },
@@ -53,7 +53,7 @@ var chr = {
       properties: {
         nom: "Centre Hospitalier Régional de GAOUA",
         localité: "Gaoua",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Régional",
         téléphone: "(226) 78 35 86 34",
         adresse: "10°19'17.0\"N 3°10'46\", N 8",
       },
@@ -67,7 +67,7 @@ var chr = {
       properties: {
         nom: "Centre Hospitalier Régional de Ziniaré",
         localité: "Ziniaré",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Régional",
         téléphone: "(226) 05 25 09 38",
         adresse: "HPRC+9H4, Ziniaré",
       },
@@ -81,7 +81,7 @@ var chr = {
       properties: {
         nom: "Centre Hospitalier Régional de Koudougou",
         localité: "Koudougou",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Régional",
         téléphone: "(226) 71 24 05 00",
         adresse: "7J6R+VHW, Koudougou",
       },
@@ -95,7 +95,7 @@ var chr = {
       properties: {
         nom: "Centre Hospitalier Régional de Kaya",
         localité: "Kaya",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Régional",
         téléphone: "(226) 24 45 30 36 / 24 45 37 58 / 24 45 37 59",
         email: "chr.kaya@sante.gov.bf",
         adresse: "3VPW+HQR, Kaya",
@@ -110,7 +110,7 @@ var chr = {
       properties: {
         nom: "Centre Hospitalier Régional de Dédougou",
         localité: "Dédougou",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Régional",
         téléphone: "(226) 20 52 02 22",
         adresse: "FG6M+CXR, Dédougou",
       },
@@ -124,7 +124,7 @@ var chr = {
       properties: {
         nom: "Centre Hospitalier Régional de Tenkodogo",
         localité: "Tenkodogo",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Régional",
         téléphone: "(226) 24 71 00 12",
         adresse: "QJJJ+HW4, Tenkodogo",
       },

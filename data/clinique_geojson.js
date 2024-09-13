@@ -23,7 +23,7 @@ var clinique = {
       properties: {
         nom: "Clinique Sainte Bernadette - N13",
         localité: "Koudougou",
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(226) 25 44 22 00",
         adresse: "BP 68, N13, Koudougou",
       },
@@ -37,7 +37,7 @@ var clinique = {
       properties: {
         nom: "Clinique Docteur OUEDRAOGO Issa",
         localité: "Ouagadougou",
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(226) 25 37 23 85",
         adresse: "9G5F+H2H, Unnamed Road, Zone I, Ouagadougou, Burkina Faso",
       },
@@ -51,7 +51,7 @@ var clinique = {
       properties: {
         nom: "Clinique de l'Est",
         localité: "Ouagadougou",
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(226) 25 36 66 74",
         adresse: "9GXM+266, Rue Balamba, Wayalguin, Ouagadougou, Burkina Faso",
       },
@@ -65,7 +65,7 @@ var clinique = {
       properties: {
         nom: "Clinique Baume de Galaad à Kossodo",
         localité: "Ouagadougou",
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "25655757",
         email: "baume.galaad@gmail.com",
         adresse:
@@ -96,7 +96,7 @@ var clinique = {
       properties: {
         nom: "CLINIQUE FRANY ZONE DU BOIS",
         localité: "Ouagadougou",
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 25 36 99 32 / 71 85 85 43 / 78 71 20 24",
         email: "Cliniquefrany@fasonet.bf",
         adresse: "9GJ5+XX8, Zone du Bois, Ouagadougou, Burkina Faso",
@@ -127,7 +127,7 @@ var clinique = {
         nom: "CABINET DENTAIRE MANEGBA à la Patte d'Oie",
         localité: "Ouagadougou",
 
-        catégorie: "Clinique dentaire",
+        catégorie: "Clinique",
         téléphone: "(+226) 02 51 38 38 / 68 68 68 06 / 02 51 48 48",
         email: "contact@cabinetmanegba.com",
         adresse: "Patte d'Oie, Ouaga 2000, Ouagadougou, Burkina Faso",
@@ -143,7 +143,7 @@ var clinique = {
         nom: "Clinique médicale Tilgma",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 25 45 15 69 / 52 95 07 07",
         adresse:
           "8FGR+HWX, Unnamed Road, Patte d'Oie, Ouagadougou, Burkina Faso",
@@ -160,7 +160,7 @@ var clinique = {
         nom: "Clinique Dentaire ADRA",
         localité: "Ouagadougou",
 
-        catégorie: "Clinique dentaire",
+        catégorie: "Clinique",
         adresse:
           "9F8F+GQ9, Rue Joseph Badoua, Koulouba, Ouagadougou, Burkina Faso",
       },
@@ -176,7 +176,7 @@ var clinique = {
         nom: "POLYCLINIQUE INTERNATIONALE DE OUAGADOUGOU (P.C.I.O)",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone:
           "(+226) 25 37 51 00 / 25 37 51 70 / 25 37 44 66 - Urgences: 70 23 68 62 / 70 12 99 50",
         email: "secretariat@pcio-ouaga.com",
@@ -210,7 +210,7 @@ var clinique = {
         nom: "Clinique El Fateh-Suka",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone:
           "(226) 25 43 16 43 / 25 43 02 89 / 25 43 06 00 / 25 43 06 01",
         email: "clinique.elfateh@suka.bf",
@@ -242,7 +242,7 @@ var clinique = {
         nom: "POLYCLINIQUE NINA AU 1200 LOGEMENT",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(226) 25 36 33 81 / 78 75 85 04",
         adresse:
           "1340 Blvd Charles De Gaulle, 1200 Logements, Ouagadougou, Burkina Faso",
@@ -258,7 +258,7 @@ var clinique = {
         nom: "CLINIQUE MÉDICALE CENTRE D'OR à la Patte d'Oie",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 25 38 80 58 / 70 46 36 24 / 78 26 79 00",
         adresse: "8FGP+XMR, Patte d'Oie, Ouagadougou, Burkina Faso",
       },
@@ -273,7 +273,7 @@ var clinique = {
         nom: "Clinique dentaire ERAS",
         localité: "Ouagadougou",
 
-        catégorie: "Clinique dentaire",
+        catégorie: "Clinique",
         téléphone: "(226) 25 31 03 12 / 25 31 36 14 / 78 00 77 17",
         email: "cliniqueeras@gmail.com",
         site_web: "https://cliniqueeras.com/",
@@ -290,7 +290,7 @@ var clinique = {
         nom: "POLYCLINIQUE SANDOF",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 25 36 09 06 / 25 36 95 52 / 25 36 09 08",
         email:
           "contact@polyclinique-sandof.com / secretariat@polyclinique-sandof.com",
@@ -308,7 +308,7 @@ var clinique = {
         nom: "CLINIQUE MEDICALE OASIS à Ouaga 2000",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 02 73 33 33 / 58 57 57 70 / 54 73 33 33",
         adresse: "Ouagadougou 15 BP213, Ouaga 2000, Burkina Faso",
       },
@@ -323,7 +323,7 @@ var clinique = {
         nom: "CLINIQUE LES TISSERINS",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 25 36 97 79",
         email: "cliniquetisserins@yahoo.fr",
         adresse: "Ouaga 2000, Ouagadougou, Burkina Faso",
@@ -340,7 +340,7 @@ var clinique = {
         nom: "Polyclinique Notre Dame de la Paix",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(226) 25 35 61 53 / 25 35 61 55 / 25 35 61 56",
         adresse:
           "CF2W+8MM, Avenue Président Jean, Ouedraogo, Ouagadougou, Burkina Faso",
@@ -356,7 +356,7 @@ var clinique = {
         nom: "CLINIQUE MEDICALE YATI à Kalgondin",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "25 48 15 79 / 25 37 17 12 / 70 36 01 01",
         adresse:
           "8FQV+4QF, Zone d'Activités Diverses, Ouagadougou, Burkina Faso",
@@ -390,7 +390,7 @@ var clinique = {
         nom: "POLYCLINIQUE INTERNATIONALE DE OUAGADOUGOU (P.C.I.O)",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone:
           "(+226) 25 37 51 00 / 25 37 51 70 / 25 37 44 66 - Urgences: 70 23 68 62 / 70 12 99 50",
         email: "secretariat@pcio-ouaga.com",
@@ -424,7 +424,7 @@ var clinique = {
         nom: "Clinique El Fateh-Suka",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone:
           "(226) 25 43 16 43 / 25 43 02 89 / 25 43 06 00 / 25 43 06 01",
         email: "clinique.elfateh@suka.bf",
@@ -456,7 +456,7 @@ var clinique = {
         nom: "POLYCLINIQUE NINA AU 1200 LOGEMENT",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(226) 25 36 33 81 / 78 75 85 04",
         adresse:
           "1340 Blvd Charles De Gaulle, 1200 Logements, Ouagadougou, Burkina Faso",
@@ -472,7 +472,7 @@ var clinique = {
         nom: "CLINIQUE MÉDICALE CENTRE D'OR à la Patte d'Oie",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 25 38 80 58 / 70 46 36 24 / 78 26 79 00",
         adresse: "8FGP+XMR, Patte d'Oie, Ouagadougou, Burkina Faso",
       },
@@ -487,7 +487,7 @@ var clinique = {
         nom: "Clinique dentaire ERAS",
         localité: "Ouagadougou",
 
-        catégorie: "Clinique dentaire",
+        catégorie: "Clinique",
         téléphone: "(226) 25 31 03 12 / 25 31 36 14 / 78 00 77 17",
         email: "cliniqueeras@gmail.com",
         site_web: "https://cliniqueeras.com/",
@@ -504,7 +504,7 @@ var clinique = {
         nom: "POLYCLINIQUE SANDOF",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 25 36 09 06 / 25 36 95 52 / 25 36 09 08",
         email:
           "contact@polyclinique-sandof.com / secretariat@polyclinique-sandof.com",
@@ -522,7 +522,7 @@ var clinique = {
         nom: "CLINIQUE MEDICALE OASIS à Ouaga 2000",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 02 73 33 33 / 58 57 57 70 / 54 73 33 33",
         adresse: "Ouagadougou 15 BP213, Ouaga 2000, Burkina Faso",
       },
@@ -537,7 +537,7 @@ var clinique = {
         nom: "CLINIQUE LES TISSERINS",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 25 36 97 79",
         email: "cliniquetisserins@yahoo.fr",
         adresse: "Ouaga 2000, Ouagadougou, Burkina Faso",
@@ -554,7 +554,7 @@ var clinique = {
         nom: "Polyclinique Notre Dame de la Paix",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(226) 25 35 61 53 / 25 35 61 55 / 25 35 61 56",
         adresse:
           "CF2W+8MM, Avenue Président Jean, Ouedraogo, Ouagadougou, Burkina Faso",
@@ -570,7 +570,7 @@ var clinique = {
         nom: "CLINIQUE MEDICALE YATI à Kalgondin",
         localité: "Ouagadougou",
 
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "25 48 15 79 / 25 37 17 12 / 70 36 01 01",
         adresse:
           "8FQV+4QF, Zone d'Activités Diverses, Ouagadougou, Burkina Faso",
@@ -603,8 +603,7 @@ var clinique = {
       properties: {
         nom: "CLINIQUE IROKO",
         localité: "Ouagadougou",
-
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(+226) 76 47 00 01 / 62 61 92 93",
         adresse: "9GG6+6Q6, rue 29.13, Wemtenga, Ouagadougou, Burkina Faso",
       },
@@ -618,8 +617,7 @@ var clinique = {
       properties: {
         nom: "CLINIQUE DU SOURIRE à la Patte d'Oie",
         localité: "Ouagadougou",
-
-        catégorie: "Clinique dentaire",
+        catégorie: "Clinique",
         téléphone: "(+226) 25 38 38 35 / 63 45 18 18 / 75 80 80 31",
         adresse: "8F9M+4RQ, rue 15.277, Patte d'Oie, Ouagadougou, Burkina Faso",
       },
@@ -633,8 +631,7 @@ var clinique = {
       properties: {
         nom: "Cabinet dentaire Dr Sawadogo Rosine",
         localité: "Ouagadougou",
-
-        catégorie: "Clinique dentaire",
+        catégorie: "Clinique",
         téléphone: "(226) 25 31 42 70 / 74 00 48 15",
         adresse:
           "578 Ave du Président Thomas Sankara, Ouagadougou, Burkina Faso",
@@ -650,8 +647,7 @@ var clinique = {
       properties: {
         nom: "Clinique Philadelphie",
         localité: "Ouagadougou",
-
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone: "(226) 25 33 28 71 / 25 33 26 71 / 70 33 60 42",
         email: "contact@cliniquephiladelphie-bf.org",
         site_web: "http://www.cliniquephiladelphie-bf.org/",
@@ -667,8 +663,7 @@ var clinique = {
       properties: {
         nom: "CLINIQUE ESPERENZA à la Patte d'Oie",
         localité: "Ouagadougou",
-
-        catégorie: "Polyclinique",
+        catégorie: "Clinique",
         téléphone:
           "(+226) 25 40 73 32 / 25 36 73 30 / 78 55 30 30 / 72 55 30 30",
         email: "info@clinique-esperanza.com",
@@ -686,7 +681,7 @@ var clinique = {
         nom: "Clinique dentaire Mission Baptiste",
         localité: "Bobo-Dioulasso",
 
-        catégorie: "Clinique dentaire",
+        catégorie: "Clinique",
         adresse: "6M2W+2QM, N9, Bobo-Dioulasso, Burkina Faso",
       },
     },
@@ -714,7 +709,6 @@ var clinique = {
       properties: {
         nom: "Clinique Saint Leopold",
         localité: "Bobo-Dioulasso",
-
         catégorie: "Clinique",
         téléphone: "(+226) 20 97 54 12",
         adresse: "5P6C+FGM, rue 17.35, Sarfalao, Bobo-Dioulasso",
@@ -868,7 +862,6 @@ var clinique = {
       properties: {
         nom: "Clinique MEDICAL SHALOM de Fada",
         localité: "Fada N'Gourma",
-
         catégorie: "Clinique",
         téléphone: "(+226) 53 69 35 35",
         adresse: "BP 109, Fada-Ngourma",

@@ -10,7 +10,7 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire Régional de Ouahigouya",
         localité: "Ouahigouya",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Universitaire",
         téléphone: "(226) 57 69 68 77",
         email: "chur.ohg@gmail.com",
         adresse: "HHHP+5V4, Ouahigouya",
@@ -25,7 +25,7 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire de Tingandogo",
         localité: "Ouagadougou",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Universitaire",
         téléphone: "(226) 25 49 09 00",
         facebook: "https://www.facebook.com/hnbc.org.bf?locale=fr_FR",
         adresse: "7F76+2JP, Sandogo, Ouagadougou, Burkina Faso",
@@ -40,7 +40,7 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire Yalgado Ouédraogo",
         localité: "Ouagadougou",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Universitaire",
         téléphone:
           "(226) 25 30 66 43 / 25 31 16 55 / 25 31 16 56 / 25 31 16 57",
         email: "huyobf@gmail.com",
@@ -58,7 +58,7 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire de BOGODOGO",
         localité: "Ouagadougou",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Universitaire",
         téléphone: "25 37 10 16 / 25 37 10 17",
         email: "infos@chubogodogo.gov.bf",
         site_web: "https://www.chubogodogo.gov.bf/",
@@ -75,7 +75,7 @@ var chu = {
       properties: {
         nom: "Centre Hospitalier Universitaire Pédiatrique – Charles de Gaulle",
         localité: "Ouagadougou",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Universitaire",
         téléphone: "(226) 76 76 76 76",
         site_web: "http://www.hopitalpediatrique.bf/",
         adresse:
@@ -91,7 +91,7 @@ var chu = {
       properties: {
         nom: "Centre Hôspitalier Universitaire Sourou Sanou",
         localité: "Bobo-Dioulasso",
-        catégorie: "Hôpital publique",
+        catégorie: "Centre Hospitalier Universitaire",
         téléphone: "(226) 20 97 00 44 / 20 97 00 45 / 20 97 00 47",
         adresse: "Sikasso Sira, Bobo-Dioulasso, Burkina Faso",
       },

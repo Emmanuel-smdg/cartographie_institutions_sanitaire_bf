@@ -43,6 +43,8 @@ let labIcon = createCustomIcon("lib/images/laboratoire.png");
 let depotIcon = createCustomIcon("lib/images/trousse.png");
 let hopitalIcon = createCustomIcon("lib/images/hopital.png");
 let clininqueIcon = createCustomIcon("lib/images/clinique.png");
+let cmaIcon = createCustomIcon("lib/images/cma.png");
+let cspsIcon = createCustomIcon("lib/images/csps.png");
 
 // Fonction pour créer un GeoJSON Layer en fonction du type et de l'icône
 function createLayer(data, icon) {
@@ -51,7 +53,17 @@ function createLayer(data, icon) {
       return L.marker(latlng, { icon: icon });
     },
     onEachFeature: function (feature, layer) {
+      // Définir le chemin de l'image (image fournie ou par défaut selon la catégorie)
+      let imageSrc = feature.properties.image
+        ? feature.properties.image
+        : getDefaultImagePath(feature.properties.catégorie);
+
+      // Construction du contenu du popup avec l'image en première position
       let popupContent =
+        "<div class='popup-content'>" +
+        "<img src='" +
+        imageSrc +
+        "' class='popup-image' alt='Image'><br>" +
         "<b>" +
         feature.properties.nom +
         "</b><br>" +
@@ -66,6 +78,19 @@ function createLayer(data, icon) {
         "<br>" +
         "Adresse: " +
         feature.properties.adresse;
+
+      // Ajout des informations supplémentaires si disponibles
+      if (feature.properties.nom_du_responsable) {
+        popupContent +=
+          "<br>Nom du Responsable: " + feature.properties.nom_du_responsable;
+      }
+      if (feature.properties.poste_du_responsable) {
+        popupContent += "<br>Poste: " + feature.properties.poste_du_responsable;
+      }
+
+      popupContent += "</div>";
+
+      // Attache le popup au marqueur
       layer.bindPopup(popupContent);
     },
   });
@@ -78,15 +103,19 @@ let labLayer = createLayer(lab, labIcon);
 let depotLayer = createLayer(depot, depotIcon);
 let hopitalLayer = createLayer(hopital, hopitalIcon);
 let cliniqueLayer = createLayer(clinique, clininqueIcon);
+let cmaLayer = createLayer(cma, cmaIcon);
+let cspsLayer = createLayer(csps, cspsIcon);
 
 // Ajout des couches de filtrage
 let overlayMaps = {
-  "CHU (Centres Hospitaliers Universitaires)": chuLayer,
-  "CHR (Centres Hospitaliers Régionaux)": chrLayer,
+  "Centres Hospitaliers Universitaires (CHU)": chuLayer,
+  "Centres Hospitaliers Régionaux (CHR)": chrLayer,
   "Laboratoires d'analyses médicales": labLayer,
   "Dépôts pharmaceutique": depotLayer,
   Hopitaux: hopitalLayer,
-  Clinique: cliniqueLayer,
+  Cliniques: cliniqueLayer,
+  "Centres Médicaux avec Antenne chirurgicale (CMA)": cmaLayer,
+  "Centres de Santé et de Promotion Sociale (CSPS)": cspsLayer,
 };
 
 // Ajout du contrôle de couches
@@ -99,6 +128,8 @@ labLayer.addTo(map);
 depotLayer.addTo(map);
 hopitalLayer.addTo(map);
 cliniqueLayer.addTo(map);
+cmaLayer.addTo(map);
+cspsLayer.addTo(map);
 
 // Ajout de la recherche sur la carte
 let searchControl = new L.Control.Search({
@@ -109,6 +140,8 @@ let searchControl = new L.Control.Search({
     depotLayer,
     hopitalLayer,
     cliniqueLayer,
+    cmaLayer,
+    cspsLayer,
   ]),
   propertyName: "nom", // Recherche par le nom des hôpitaux
   marker: false,
@@ -125,7 +158,16 @@ let legend = L.control({ position: "bottomleft" });
 legend.onAdd = function (map) {
   let div = L.DomUtil.create("div", "info legend"),
     labels = ["<strong>Types d'Hôpitaux</strong>"],
-    categories = ["CHU", "CHR", "LABO", "DEPOT", "HOPITAL", "CLINIQUE"];
+    categories = [
+      "CHU",
+      "CHR",
+      "LABO",
+      "DEPOT",
+      "HOPITAL",
+      "CLINIQUE",
+      "CMA",
+      "CSPS",
+    ];
 
   let icons = {
     CHU: "lib/images/chu.png",
@@ -134,6 +176,8 @@ legend.onAdd = function (map) {
     DEPOT: "lib/images/trousse.png",
     HOPITAL: "lib/images/hopital.png",
     CLINIQUE: "lib/images/clinique.png",
+    CMA: "lib/images/cma.png",
+    CSPS: "lib/images/csps.png",
   };
 
   categories.forEach(function (category) {
@@ -150,3 +194,27 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
+
+// Fonction pour définir le chemin de l'image par défaut selon la catégorie
+function getDefaultImagePath(categorie) {
+  switch (categorie) {
+    case "CENTRE DE SANTE PUBLIQUE":
+      return "lib/images/cma.png";
+    case "Centres de Santé et de Promotion Sociale":
+      return "lib/images/csps.png";
+    case "Centre Hospitalier Régional":
+      return "lib/images/chr.png";
+    case "Centre Hospitalier Universitaire":
+      return "lib/images/chu.png";
+    case "Laboratoire d'analyses médicales":
+      return "lib/images/laboratoire.png";
+    case "Dépôt pharmaceutique":
+      return "lib/images/trousse.png";
+    case "Hôpital privé":
+      return "lib/images/hopital.png";
+    case "Clinique":
+      return "lib/images/clinique.png";
+    default:
+      return "lib/images/csps.png";
+  }
+}
