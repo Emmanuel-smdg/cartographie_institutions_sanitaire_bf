@@ -60,13 +60,13 @@ function createLayer(data, icon) {
 
       // Construction du contenu du popup avec l'image en première position
       let popupContent =
-        "<div class='popup-content'>" +
+        "<div class='popup-content mb-2'>" +
         "<img src='" +
         imageSrc +
         "' class='popup-image' alt='Image'><br>" +
-        "<b>" +
+        "<h5>" +
         feature.properties.nom +
-        "</b><br>" +
+        "</h5><br>" +
         "Localité: " +
         feature.properties.localité +
         "<br>" +
@@ -78,8 +78,6 @@ function createLayer(data, icon) {
         "<br>" +
         "Adresse: " +
         feature.properties.adresse;
-
-      // Ajout des informations supplémentaires si disponibles
       if (feature.properties.nom_du_responsable) {
         popupContent +=
           "<br>Nom du Responsable: " + feature.properties.nom_du_responsable;
@@ -89,14 +87,12 @@ function createLayer(data, icon) {
       }
 
       popupContent += "</div>";
-
-      // Attache le popup au marqueur
       layer.bindPopup(popupContent);
     },
   });
 }
 
-// Couches pour les CHR et CHU
+// Création des Couches
 let chrLayer = createLayer(chr, chrIcon);
 let chuLayer = createLayer(chu, chuIcon);
 let labLayer = createLayer(lab, labIcon);
@@ -106,7 +102,7 @@ let cliniqueLayer = createLayer(clinique, clininqueIcon);
 let cmaLayer = createLayer(cma, cmaIcon);
 let cspsLayer = createLayer(csps, cspsIcon);
 
-// Ajout des couches de filtrage
+// Affichage des différentes couches de l'application
 let overlayMaps = {
   "Centres Hospitaliers Universitaires (CHU)": chuLayer,
   "Centres Hospitaliers Régionaux (CHR)": chrLayer,
@@ -121,7 +117,7 @@ let overlayMaps = {
 // Ajout du contrôle de couches
 L.control.layers(null, overlayMaps).addTo(map);
 
-// Afficher les deux couches par défaut
+// Afficher toutes les couches par défaut
 chrLayer.addTo(map);
 chuLayer.addTo(map);
 labLayer.addTo(map);
@@ -156,8 +152,8 @@ let searchControl = new L.Control.Search({
 let legend = L.control({ position: "bottomleft" });
 
 legend.onAdd = function (map) {
-  let div = L.DomUtil.create("div", "info legend"),
-    labels = ["<strong>Types d'Hôpitaux</strong>"],
+  let div = L.DomUtil.create("div", "bg-light rounded p-1"),
+    labels = ["<strong>Légende :</strong>"],
     categories = [
       "CHU",
       "CHR",
@@ -184,7 +180,7 @@ legend.onAdd = function (map) {
     div.innerHTML += labels.push(
       '<img src="' +
         icons[category] +
-        '" style="width:24px;height:24px;"> ' +
+        '" style="width:24px;height:24px; margin-bottom:0.25rem"> ' +
         category
     );
   });
@@ -218,3 +214,87 @@ function getDefaultImagePath(categorie) {
       return "lib/images/csps.png";
   }
 }
+
+// Ajout de la bibliothèque Leaflet Routing Machine
+let routingControl;
+
+function calculateRoute(start, end) {
+  if (routingControl) {
+    map.removeControl(routingControl);
+  }
+
+  routingControl = L.Routing.control({
+    waypoints: [L.latLng(start.lat, start.lng), L.latLng(end.lat, end.lng)],
+    router: L.Routing.osrmv1({
+      serviceUrl: "https://router.project-osrm.org/route/v1",
+    }),
+    lineOptions: {
+      styles: [{ color: "blue", opacity: 0.6, weight: 4 }],
+    },
+    createMarker: function () {
+      return null;
+    },
+  }).addTo(map);
+
+  routingControl.on("routesfound", function (e) {
+    let routes = e.routes;
+    let summary = routes[0].summary;
+    // Temps en secondes, distance en mètres
+    let popupContent = `Distance: ${(summary.totalDistance / 1000).toFixed(
+      2
+    )} km<br>
+                        Durée: ${Math.round(summary.totalTime / 60)} minutes`;
+    L.popup().setLatLng(end).setContent(popupContent).openOn(map);
+  });
+}
+
+// Fonctionnalité affichage et calcul de l'itinéraire depuis ma position
+map.on("popupopen", function (e) {
+  let marker = e.popup._source;
+  if (marker) {
+    let popupContent = e.popup.getContent();
+    if (typeof popupContent === "string") {
+      popupContent = `<div>${popupContent}</div>`;
+    }
+    let container = L.DomUtil.create("div", "");
+    container.innerHTML = popupContent;
+
+    let startBtn = L.DomUtil.create("button", "center btn btn-info", container);
+    startBtn.innerHTML = "Calculer l'itinéraire depuis ma position";
+    startBtn.style.cursor = "pointer";
+
+    L.DomEvent.on(startBtn, "click", function () {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          let start = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          let end = marker.getLatLng();
+          calculateRoute(start, end);
+        });
+      } else {
+        alert("La géolocalisation n'est pas supportée par votre navigateur.");
+      }
+    });
+
+    e.popup.setContent(container);
+  }
+});
+
+// Ajout d'un contrôle pour effacer l'itinéraire
+L.Control.ClearRoute = L.Control.extend({
+  onAdd: function (map) {
+    let btn = L.DomUtil.create("button", "btn btn-secondary text-center mt-2");
+    btn.innerHTML = "Effacer l'itinéraire";
+    btn.onclick = function () {
+      if (routingControl) {
+        map.removeControl(routingControl);
+        routingControl = null;
+      }
+    };
+    return btn;
+  },
+});
+
+new L.Control.ClearRoute({ position: "topright" }).addTo(map);
