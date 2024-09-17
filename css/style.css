@@ -7,3 +7,85 @@
   height: auto;
   margin-bottom: 10px;
 }
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* Navbar styling */
+nav {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  color: #ffd700 !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.btn-outline-warning {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+h3 {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.list-group-item {
+  font-size: 1.1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.list-group-item::before {
+  content: "\f00c";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #28a745;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+.btn-view-map {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-view-map:hover {
+  background-color: #218838;
+  color: white;
+}
