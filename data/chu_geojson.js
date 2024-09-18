@@ -47,6 +47,7 @@ var chu = {
         site_web: "https://chuyobf.org/",
         adresse: "01bp5234ouaga01, Ouagadougou, Burkina Faso",
         réseau_social: "https://www.facebook.com/yalgado/",
+        image: "images/yalgado.jpeg",
       },
     },
     {
