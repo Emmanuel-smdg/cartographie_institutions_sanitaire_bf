@@ -7,3 +7,58 @@
   height: auto;
   margin-bottom: 10px;
 }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f8fa;
+}
+
+h2 {
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.content-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.content-card ul li {
+  margin-bottom: 10px;
+}
+
+.btn-view-map {
+  background-color: #47b2e4;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-view-map:hover {
+  background-color: #36a0c9;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
