@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartographie Web interactive des institutions du Ministère de la Santé et de l'Hygiène Publique</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="lib/bootstrap.min.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Groupe 3</a>
+            <a class="navbar-brand" href="index.html">Groupe_3_IBAM_Projet_SIG</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -32,51 +33,96 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
-        <code>GIS Project on Web Mapping <br>
-        Objet : Développement d'une application de cartographie Web interactive sur les  institutions au Burkina Faso</code>
-        <p>
-            Cette application web interactive affiche les emplacements des structures de santé au Burkina Faso. Elle
-            fournit des informations détaillées sur :
-        <ul>
-            <li>Hôpitaux et cliniques, incluant les centres de vaccination.</li>
-            <li>Laboratoires d'analyses médicales (publics et privés).</li>
-            <li>Centres de santé publics tels que CSPS, CMA, ainsi que les dépôts pharmaceutiques.</li>
-        </ul>
-        Les utilisateurs peuvent naviguer sur la carte, effectuer des recherches par nom, et obtenir des itinéraires
-        pour se rendre à un établissement de santé.
-        <ul>
-            <li>Les utilisateurs peuvent visualiser les emplacements des établissements sur la carte interactive. La
-                carte est zoomable et déplaçable, avec des marqueurs pour chaque emplacement.</li>
-            <li>
-                L'application permet d'afficher ou masquer différentes catégories d'établissements de santé via un
-                panneau de contrôle des couches. Cela permet de n'afficher que les établissements souhaités, par
-                exemple, les CHU ou les laboratoires d'analyses médicales.
-            </li>
-            <li>
-                Les utilisateurs peuvent rechercher un établissement par son nom grâce à une barre de recherche.
-                L'application centre la carte sur l'établissement trouvé et offre un zoom adapté.
-            </li>
-            <li>
-                Les utilisateurs peuvent obtenir des itinéraires détaillés pour se rendre à un établissement de santé.
-                L'itinéraire est calculé à partir de la position actuelle de l'utilisateur, avec des informations sur la
-                distance et le temps de trajet.
-            </li>
-            <li>
-                Une légende personnalisée est disponible en bas de la carte pour montrer les icônes associées à chaque
-                catégorie d'établissements, facilitant la compréhension de la carte.
-                Fonctionnalités supplémentaires potentielles
-            </li>
-        </ul>
-        </p>
-        <h3>Groupe 3 : </h3>
-        <ul>
-            <li>DERRA Ibrahim</li>
-            <li>NEYA Wendlamita Abdoul Karim</li>
-            <li>OUEDRAOGO Séverine Pegwendé Larissa</li>
-            <li>SAMANDOULOUGOU Emmanuel</li>
-            <li>TARPAGA Abdoul Razak</li>
-        </ul>
+
+    <div class="container-fluid fade-in">
+        <div class="content-card">
+            <h4 class="text-center">Cartographie Web interactive des institutions de santé du Burkina Faso</h4>
+
+            <div id="healthCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/sante.jpg" class="d-block w-100" alt="Hôpitaux">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Hôpitaux et Cliniques</h5>
+                            <p>Accédez à une carte complète des hôpitaux et cliniques à travers le Burkina Faso.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/labo.jpg" class="d-block w-100" alt="Laboratoires">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Laboratoires d'Analyses</h5>
+                            <p>Trouvez les laboratoires publics et privés spécialisés dans les analyses médicales.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/clinique.jpg" class="d-block w-100" alt="Centres de Santé">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Centres de Santé</h5>
+                            <p>Découvrez les centres de santé publics, incluant les CSPS, CMA et autres.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#healthCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Précédent</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#healthCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Suivant</span>
+                </button>
+            </div>
+
+            <p class="mt-4">
+                L'application web interactive affiche les emplacements des structures de santé au Burkina Faso. <br>
+                Elle
+                fournit des informations détaillées sur :
+            </p>
+            <ul class="list-group mb-4">
+                <li class="list-group-item">Hôpitaux et cliniques, incluant les centres de vaccination.</li>
+                <li class="list-group-item">Laboratoires d'analyses médicales (publics et privés).</li>
+                <li class="list-group-item">Centres de santé publics tels que CSPS, CMA, ainsi que les dépôts
+                    pharmaceutiques.</li>
+            </ul>
+
+            <p>Les utilisateurs peuvent naviguer sur la carte, effectuer des recherches par nom, et obtenir des
+                itinéraires
+                pour se rendre à un établissement de santé.</p>
+
+            <ul class="list-group mb-4">
+                <li class="list-group-item">Les utilisateurs peuvent visualiser les emplacements des établissements
+                    sur
+                    la carte interactive, zoomable et déplaçable.</li>
+                <li class="list-group-item">Affichage ou masquage des catégories d'établissements de santé via un
+                    panneau de contrôle des couches.</li>
+                <li class="list-group-item">Recherche par nom d'un établissement avec zoom automatique sur
+                    l'établissement trouvé.</li>
+                <li class="list-group-item">Itinéraires détaillés pour accéder à un établissement depuis la position
+                    actuelle de l'utilisateur.</li>
+                <li class="list-group-item">Légende personnalisée en bas de la carte pour montrer les icônes
+                    associées à
+                    chaque catégorie.</li>
+            </ul>
+
+            <div class="text-center mt-5">
+                <h3>Explorez la carte interactive</h3>
+                <p>Découvrez les différentes catégories d'établissements de santé à travers une carte interactive. <br>
+                    Naviguez,
+                    recherchez et obtenez des informations sur les structures de santé près de chez vous.</p>
+                <a href="cartographie.html" class="btn btn-info">Voir la carte</a>
+            </div>
+
+            <h3 class="mt-5">Membres du Groupe 3 :</h3>
+            <ul class="list-group">
+                <li class="list-group-item">DERRA Ibrahim</li>
+                <li class="list-group-item">NEYA Wendlamita Abdoul Karim</li>
+                <li class="list-group-item">OUEDRAOGO Séverine Pegwendé Larissa</li>
+                <li class="list-group-item">SAMANDOULOUGOU Emmanuel</li>
+                <li class="list-group-item">TARPAGA Abdoul Razak</li>
+            </ul>
+        </div>
 
     </div>
 
