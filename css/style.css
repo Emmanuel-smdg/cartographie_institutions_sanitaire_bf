@@ -7,40 +7,21 @@
   height: auto;
   margin-bottom: 10px;
 }
+
+
+
+
+/* Styles pour les éléments de la carte */
+#map {
+  height: 90vh;
+}
+/* Styles globaux */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
 }
 
-/* Navbar styling */
-nav {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-link {
-  font-size: 1.1rem;
-  color: #ffd700 !important;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #ffc107 !important;
-}
-
-.btn-outline-warning {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-outline-warning:hover {
-  background-color: #ffc107;
-  color: #fff;
-}
-
+/* Styles pour les éléments généraux */
 h3 {
   margin-top: 20px;
   font-weight: bold;
@@ -89,3 +70,5 @@ p {
   background-color: #218838;
   color: white;
 }
+
+
